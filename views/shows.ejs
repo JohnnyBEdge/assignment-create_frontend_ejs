@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form action="#" method="post">
+      <label for="show_title">Show title:</label>
+      <input id="show_title" type="text" name="show_title">
+      <br>
+      <label for="season">Season:</label>
+      <input id="season" type="number" name="season">
+      <br>
+      <label for="release_year">Release year:</label>
+      <input id="release_year" type="number" name="release_year">
+      <br>
+      <button id="submitBtn" value="Add Show">Submit Show</button>
+    </form>
+
+    <ul>
+        <% for(let i = 0; i < data.length; i++) { %>
+
+          <ul>
+            <li>
+              <%= data[i].title %>
+              <button class= "delete" id="<%= data[i].id %>">Delete</button>
+            </li>
+              <ul>
+                <li><p>Season:<%= data[i].season %></p></li>
+                <li><p>Year released: <%= data[i].release_year %></p></li>
+              </ul>  
+          </ul>
+
+            <% } %>
+          </ul>
+        
+   
+<script src="/javascripts/shows.js"></script>
+
+  </body>
+</html>
